@@ -31,7 +31,7 @@ swap_string("abc", "xyz")
 
 # Q-4
 def change_str(input_str):
-    if len(input_str) > 2:
+    if len(input_str) >= 3:
         if input_str[-3:] == "ing":
             input_str += "ly"
             print(input_str)
@@ -41,7 +41,7 @@ def change_str(input_str):
     else:
         print(input_str)
 
-change_str("ab")
+change_str("abing")
 
 # # Q-5
 def creating_new_str(input_str):
