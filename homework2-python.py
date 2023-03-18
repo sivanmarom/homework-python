@@ -6,17 +6,13 @@ for val in identification_list:
 # Q-2
 def higher_value(_list1, _list2):
     higher_list = []
-    try:
-        assert len(_list1) == len(_list2), "Your list's length is not the same!"
-    except IndexError as msg:
-            print(msg)
-    else:
-        for i in range(len(_list1)):
-            if _list1[i] < _list2[i]:
-                higher_list.append(_list2[i])
-            else:
-                higher_list.append(_list1[i])
-        return higher_list
+    assert len(_list1) == len(_list2), "Your list's length is not the same!"
+    for i in range(len(_list1)):
+        if _list1[i] < _list2[i]:
+            higher_list.append(_list2[i])
+        else:
+            higher_list.append(_list1[i])
+    return higher_list
 
 print(higher_value([1,2,3,4,5], [5,4,3,2,1]))
 
@@ -65,7 +61,7 @@ def find_min_value(input_list):
         if val < min_value:
             min_value = val
     return min_value
-print(find_min_value([1,2,3,4,5]))
+print(find_min_value([6,2,3,4,5]))
 
 # Q-7
 def lower_and_upper(input_str):
