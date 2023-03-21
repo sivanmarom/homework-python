@@ -24,7 +24,7 @@ def change_list(input_list):
         input_list[5] = "@"
         return input_list
 
-print(change_list([1,2,3,4]))
+print(change_list([1,2,3,4,5,7]))
 
 # Q-4  Build a function that will receive a dictionary a new key and a new key value. The function will add the new key value to the dictionary and will return the updated dictionary.
 def update_dict(input_dict, _key, _value):
@@ -82,13 +82,20 @@ def fact(n):
     if n == 0:
         return 1
     return n * fact(n-1)
-print(fact(-1))
+print(fact(2))
 
 # Q-10  Create a recursive function to calculate the sum of the positive integers of n+ (n-1) + (n-3)... (Until n-x <= 0). The n value is the function input the summary result is the output of the function.
-#
-#
-# -- couldn't solve this question
-
+def sum_of_positive_integers(n, x=[1, 2]):
+    if n <= 0:
+        return 0
+    for val in x:
+        if n - val < 0:
+            continue
+        else:
+            return n + sum_of_positive_integers(n - val, x[1:] + [x[0]])
+    return 0
+print(sum_of_positive_integers(5))
+# took some time, but i think its ok now:)
 
 # Q-11  Create a recursive function to calculate the value of 'a' to the power 'b'.
 def power(a, b):
